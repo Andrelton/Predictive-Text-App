@@ -1,4 +1,3 @@
-require 'bcrypt'
 class User < ActiveRecord::Base
   # users.password_hash in database  is a :string
   include BCrypt
@@ -13,8 +12,8 @@ class User < ActiveRecord::Base
   end
 
   def password=(new_password)
-    @password = Password.create(new_passord)
+    @password = Password.create(new_password)
     self.password_hash = @password
   end
-  
+
 end
