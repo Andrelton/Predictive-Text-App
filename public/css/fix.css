@@ -1,0 +1,13 @@
+header h1 {
+  font-size: 140%;
+  margin-left: 15px;
+  margin-top:5px;
+}
+
+small {
+  color: white;
+}
+
+#home {
+  margin-bottom: 20px;
+}
