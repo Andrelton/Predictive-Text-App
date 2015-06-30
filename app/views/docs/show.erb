@@ -5,8 +5,8 @@
 </div>
 
 <div class="save">
-  <form method="POST" action="/docs/<%= @doc.id %>">
-    <input type="hidden" name="_method" value="PUT">
+  <form method="PUT" action="/docs/<%= @doc.id %>">
+    <!-- <input type="hidden" name="_method" value="PUT"> -->
     <input type="submit" value="SAVE! :)">
   </form>
 </div>
