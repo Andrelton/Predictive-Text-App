@@ -1,5 +1,6 @@
 get '/docs/:id' do
-  @message = "I can say this so many times."
+  # @doc = Doc.where(id: params[:id]).first
+  @doc = Doc.first
   erb :"docs/show"
 end
 
