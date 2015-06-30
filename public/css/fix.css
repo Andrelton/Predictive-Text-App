@@ -12,7 +12,11 @@ small {
   margin-bottom: 20px;
 }
 
-#sign-in {
+.sign {
   margin-top: 150px;
   margin-bottom: 150px;
+}
+
+.btn-one {
+  color:white;
 }
