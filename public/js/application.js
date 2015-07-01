@@ -102,11 +102,11 @@ $(document).ready(function() {
 
  // draw pad!!!
  // $('#simple_sketch').sketch();
-    $.each(['#f00', '#ff0', '#0f0', '#0ff', '#00f', '#f0f', '#000', '#fff'], function() {
-      $('#colors_demo .tools').append("<a href='#colors_sketch' data-color='" + this + "' style='width: 10px; background: " + this + ";'></a> ");
+    $.each(['#f00', '#ff0', '#befa11', '#0ff', '#0b7ec7', '#f0f', '#000', '#fff'], function() {
+      $('div.draw .tools').append("<div><a href='#colors_sketch' data-color='" + this + "' style=' height: 10px; width: 10px; background: " + this + ";'></a></div>");
     });
     $.each([3, 5, 10, 15], function() {
-      $('#colors_demo .tools').append("<a href='#colors_sketch' data-size='" + this + "' style='background: #ccc'>" + this + "</a> ");
+      $('div.draw .tools').append("<div><a href='#colors_sketch' data-size='" + this + "' style='background: #ccc'>" + this + "</a></div> ");
     });
     $('#colors_sketch').sketch();
 });

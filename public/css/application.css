@@ -26,8 +26,24 @@ li.ui-menu-item:hover {
   cursor: pointer;
 }
 
-canvas#simple_sketch {
+canvas#colors_sketch {
   background-color: #FFFFF0;
   box-shadow: 8px 8px 8px #888888;
-  margin-bottom: 100px;
 }
+div.draw {
+  margin-bottom: 100px;
+  margin-left: 2%;
+}
+
+.tools a {
+  /*width: 10px;*/
+  padding: 10px;
+  height: 10px;
+  border: 1px solid black;
+}
+
+.tools div {
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+
