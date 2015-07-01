@@ -1,6 +1,23 @@
-/*li.ui-menu-item {
-  display: inline-block;
+li.ui-menu-item {
+  display: inline;
+  float: left;
+  clear: left;
   color: white;
-  background-color: blue;
+  background-color: #BADA55;
+  list-style-type: none;
+  padding: 0.5em;
+  margin: 1px;
+  border-radius: 3px;
 }
-*/
+
+span div {
+  display: none;
+}
+
+li:first-child {
+  margin-top: 0.5em;
+}
+
+li.ui-menu-item:hover {
+  cursor: pointer;
+}

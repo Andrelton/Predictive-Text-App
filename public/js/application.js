@@ -1,7 +1,19 @@
 $(document).ready(function() {
- $('input.new-word').autocomplete({
-  source: wordList
- });
+ // $('input.new-word').autocomplete({
+ //  source: wordList
+ // });
+
+  $('input.new-word').autocomplete({
+    // $(this).append($('<h3>Use up and down to choose your word!</h3>'));
+    source: function(request, response) {
+      var results = $.ui.autocomplete.filter(wordList, request.term);
+      response(results.slice(0, 6));
+    },
+    messages: {
+        noResults: '',
+        results: function() {}
+    }
+  });
 
  $('div.new-word').on('submit', 'form', function(event) {
   event.preventDefault();
