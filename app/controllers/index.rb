@@ -17,15 +17,21 @@ end
 #-----------USERS---------------
 get '/users/new' do
   erb :sign_up
-
 end
 
 post '/users' do
-  p "*" * 90
-  p params[:user]
-  # create
-  #create user -- use model
-  #redirect to user profile page
+  create
+  p @user
+  if @user.save
+    give_token(@user)
+    redirect "/users/#{@user.id}"
+  else
+    erb :sign_up
+  end
+end
+
+get '/users/:id' do
+  #show user page
 end
 
 #-----------DOCS---------------

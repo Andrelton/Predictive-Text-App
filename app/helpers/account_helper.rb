@@ -1,11 +1,11 @@
 helpers do
 
-  def give_token
+  def give_token(user)
     session[:user_id] = user.id
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(params)
     @user.password = params[:password]
   end
 
