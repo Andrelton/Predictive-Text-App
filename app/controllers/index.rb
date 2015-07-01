@@ -43,3 +43,14 @@ get '/users/:id' do
   @docs = @user.docs
   erb :'users/user_docs'
 end
+
+get '/users/:id/edit' do
+  @user = User.where(id: params[:id]).first
+  erb :'users/user_edit'
+end
+
+put '/users/:id' do
+  @user = User.where(id: params[:id]).first
+  @user.update_attributes(:first_name => params[:first_name], :username => params[:user_name])
+  redirect "/users/#{@user.id}"
+end
