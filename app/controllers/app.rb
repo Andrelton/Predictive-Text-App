@@ -6,6 +6,8 @@ end
 
 put '/docs/:id' do
   doc = Doc.where(id: params[:id]).first
+  p params
+  doc.title = params[:title]
   doc.content = params[:content]
   if doc.save
     content_type :json
@@ -16,3 +18,4 @@ put '/docs/:id' do
     # error message
   end
 end
+
