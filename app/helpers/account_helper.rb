@@ -1,4 +1,7 @@
 helpers do
+  def current_user
+    @current_user ||= User.where(id: session[:user_id]).first if session[:user_id]
+  end
 
   def give_token(user)
     session[:user_id] = user.id
@@ -27,7 +30,7 @@ helpers do
     end
   end
 
-  def log_out
+  def logout
     session[:user_id] = nil
     @current_user = nil
   end
