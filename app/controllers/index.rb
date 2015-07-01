@@ -12,7 +12,6 @@ post '/sessions' do
 end
 
 delete "/sessions/:user_id" do
-  # @user = User.where(id: params[:user_id]).first
   current_user
   logout
   redirect '/'
@@ -34,6 +33,7 @@ post '/users' do
     give_token(@user)
     redirect "/users/#{@user.id}"
   else
+    @errors = @user.errors.full_messages
     erb :sign_up
   end
 end
@@ -42,4 +42,15 @@ get '/users/:id' do
   @user = User.where(id: params[:id]).first
   @docs = @user.docs
   erb :'users/user_docs'
+end
+
+get '/users/:id/edit' do
+  @user = User.where(id: params[:id]).first
+  erb :'users/user_edit'
+end
+
+put '/users/:id' do
+  @user = User.where(id: params[:id]).first
+  @user.update_attributes(:first_name => params[:first_name], :username => params[:user_name])
+  redirect "/users/#{@user.id}"
 end

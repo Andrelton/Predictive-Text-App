@@ -26,6 +26,7 @@ li.ui-menu-item:hover {
   cursor: pointer;
 }
 
+
 canvas#colors_sketch {
   background-color: #FFFFF0;
   box-shadow: 8px 8px 8px #888888;
@@ -45,5 +46,31 @@ div.draw {
 .tools div {
   display: inline-block;
   margin-bottom: 0.5em;
+}
+
+
+.hidden {
+  display: none;
+}
+
+input.url {
+  width: 450px;
+  margin-bottom: 1em;
+}
+
+button.add-photo {
+  margin-bottom: 1em;
+}
+
+img.doc-photo {
+  height: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+}
+
+div.photo {
+  width: 65%;
 }
 

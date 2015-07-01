@@ -100,6 +100,7 @@ $(document).ready(function() {
   input.val('').select();
   });
 
+
  // draw pad!!!
  // $('#simple_sketch').sketch();
     $.each(['#f00', '#ff0', '#befa11', '#0ff', '#0b7ec7', '#f0f', '#000', '#fff'], function() {
@@ -109,6 +110,60 @@ $(document).ready(function() {
       $('div.draw .tools').append("<div><a href='#colors_sketch' data-size='" + this + "' style='background: #ccc'>" + this + "</a></div> ");
     });
     $('#colors_sketch').sketch();
+
+ // ADD PHOTO
+ // SHOW FORM
+ $('div.photo').on('click', 'button.add-photo', function(event) {
+  event.preventDefault();
+  var button = $(this);
+
+  button.toggle();
+  button.siblings('form').removeClass('hidden');
+
+ });
+
+ // HIDE FORM
+  $('div.photo').on('click', 'button.canceler', function(event) {
+    event.preventDefault();
+    var form = $(this).parent();
+
+    form.siblings('button.add-photo').toggle();
+    form.addClass('hidden');
+
+  });
+
+  // ....ACTUALLY ADD PHOTO
+  $('div.photo').on('submit', 'form', function(event) {
+    event.preventDefault();
+    var form = $(this);
+
+    var method = form.attr('method');
+    var action = form.attr('action');
+
+    var request = $.ajax({
+      type: method,
+      url: action,
+      data: form.serialize(),
+      dataType: 'html'
+    });
+
+    request.done(function(photoHTML) {
+      form.parent().find('img').remove();
+      form.parent().append(photoHTML);
+      // $('div#doc-edit-area').prepend(photoHTML);
+      form.find('input.url').val('');
+      form.addClass('hidden');
+      form.siblings('button.add-photo').text('Change Photo').toggle();
+    });
+
+    request.fail(function(errorMessage) {
+      alert("Ok [thumbs up]");
+    });
+
+  });
+
 });
+
+
 
 

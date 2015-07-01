@@ -33,6 +33,13 @@ put '/docs/:id' do
   end
 end
 
+put '/docs/:id/photo' do
+  @doc = Doc.where(id: params[:id]).first
+  @doc.photo = params[:photo_url]
+  @doc.save
+  erb :_photo, layout: false
+end
+
 delete '/docs/:id' do
   current_user
   @doc = Doc.find_by(id: params[:id])

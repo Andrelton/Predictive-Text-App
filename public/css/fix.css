@@ -49,7 +49,7 @@ small {
 #save-btn {
   position:relative;
   top: -34px;
-  right: -165px;
+  right: -252px;
 }
 
 #new-word {
@@ -101,3 +101,8 @@ small {
   font-size: 15px;
 }
 
+@media print {
+  header, footer, #document-controls, #word-prediction-buttons {
+    display: none;
+  }
+}

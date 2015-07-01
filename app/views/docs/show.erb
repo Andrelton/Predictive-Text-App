@@ -1,11 +1,32 @@
 <div class="container" id="doc-edit">
   <div id="document-controls" role="group">
+    <button class="voice doc btn btn-primary" onclick="javascript:window.print()"><span class="glyphicon glyphicon-print"></span>Publish</button>
     <button class="voice doc btn btn-primary"><span class="glyphicon glyphicon-headphones"></span>  Listen to Your Doc!</button>
     <div class="save">
       <form method="PUT" action="/docs/<%= @doc.id %>">
         <!-- <input type="hidden" name="_method" value="PUT"> -->
         <input id="save-btn" class="btn btn-warning" type="submit" value="SAVE">
       </form>
+    </div>
+    <div class="photo">
+      <% if @doc.photo %>
+        <button class="add-photo btn btn-primary">Change Photo</button>
+          <form class="hidden" method="POST" action="/docs/<%= @doc.id %>/photo">
+          <input type="hidden" name="_method" value="PUT">
+          <input class="url" name="photo_url" type="text" placeholder="Photo URL:">
+          <input class="btn btn-primary" type="submit" value="Add Your Photo">
+          <button class="canceler btn btn-warning">Cancel</button>
+        </form>
+        <%= erb :_photo %>
+      <% else %>
+        <button class="add-photo btn btn-primary">Add a photo!</button>
+        <form class="hidden" method="POST" action="/docs/<%= @doc.id %>/photo">
+          <input type="hidden" name="_method" value="PUT">
+          <input class="url" name="photo_url" type="text" placeholder="Photo URL:">
+          <input class="btn btn-primary" type="submit" value="Add Your Photo">
+          <button class="canceler btn btn-warning">Cancel</button>
+        </form>
+      <% end %>
     </div>
   </div>
   <div class="row">
@@ -29,12 +50,9 @@
     </div>
   </div>
 </div>
-
 <div class="draw">
   <h3>Draw!</h3>
   <div class="tools">
   </div>
   <canvas id="colors_sketch" width="800" height="300"></canvas>
 </div>
-
-
