@@ -1,5 +1,5 @@
 get '/docs/new' do
-  erb :"docs"
+  erb :"docs/new_doc"
 end
 
 post '/docs' do
