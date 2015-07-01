@@ -33,7 +33,7 @@ put '/docs/:id' do
   end
 end
 
-post '/docs/:id/photo' do
+put '/docs/:id/photo' do
   @doc = Doc.where(id: params[:id]).first
   @doc.photo = params[:photo_url]
   @doc.save
