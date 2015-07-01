@@ -12,7 +12,7 @@
       <% if @doc.photo %>
         <button class="add-photo btn btn-primary">Change Photo</button>
           <form class="hidden" method="POST" action="/docs/<%= @doc.id %>/photo">
-          <input type="hidden" name="_method" value="PUT">
+<!--           <input type="hidden" name="_method" value="PUT"> -->
           <input class="url" name="photo_url" type="text" placeholder="Photo URL:">
           <input class="btn btn-primary" type="submit" value="Add Your Photo">
           <button class="canceler btn btn-warning">Cancel</button>
