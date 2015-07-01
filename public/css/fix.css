@@ -41,10 +41,10 @@ small {
 
 }
 
-#save {
-	background-color: green;
-	border-radius: 5px;
-	border-color: green;
+#save-btn {
+  position:relative;
+  top: -34px;
+  right: -165px;
 }
 
 #new-word {
@@ -53,3 +53,28 @@ small {
 	border-color: blue;
 
 }
+
+#doc-edit {
+  min-height: 400px;
+  margin-top: 25px;
+}
+
+#doc-edit-area {
+  background-image: url('/img/paper.jpg');
+  max-width: 1000px;
+  padding-left: 152px;
+  font-family: 'Coming Soon', cursive;
+}
+
+#doc-title {
+  margin-top: 65px;
+  font-size: 3.5em;
+  margin-bottom: 0px;
+}
+
+#doc-edit-area p {
+  font-size: 3.0em;
+  line-height: 145%;
+}
+
+

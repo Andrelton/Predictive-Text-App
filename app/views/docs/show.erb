@@ -1,26 +1,32 @@
+<div class="container" id="doc-edit">
+  <div id="document-controls" role="group">
+    <button class="voice doc btn btn-primary"><span class="glyphicon glyphicon-headphones"></span>  Listen to Your Doc!</button>
+    <div class="save">
+      <form method="PUT" action="/docs/<%= @doc.id %>">
+        <!-- <input type="hidden" name="_method" value="PUT"> -->
+        <input id="save-btn" class="btn btn-warning" type="submit" value='SAVE <span class="glyphicon glyphicon-floppy-save"'>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div id="doc-edit-area" class="well col-md-8 col-lg-8">
+      <h3>Story by <%= @doc.user.first_name %></h3>
+      <h1 id="doc-title" contenteditable="true" class="text-center"><%= @doc.title %></h1>
 
-<h3>Story by <%= @doc.user.first_name %></h3>
-<h1 id="doc-title" contenteditable="true"><%= @doc.title %></h1>
-
-<div class="doc-content">
-  <p contenteditable="true"><%= @doc.content %></p>
-  <!-- <p><%= @doc.content %></p> -->
-  <button class="voice doc">Listen to Your Doc!</button>
-</div>
-
-
-<div class="save">
-  <form method="PUT" action="/docs/<%= @doc.id %>">
-    <!-- <input type="hidden" name="_method" value="PUT"> -->
-    <input type="submit" value="SAVE! :)">
-  </form>
-</div>
-
-<div class="new-word">
-  <form>
-    <input class="new-word" type="text" placeholder="New Word:">
-    <input type="submit" value="+">
-  </form>
-  <button class="delete">X</button>
-  <button class="voice word">&#9738; Hear Word!</button>
+      <div class="doc-content">
+        <p contenteditable="true"><%= @doc.content %></p>
+        <!-- <p><%= @doc.content %></p> -->
+      </div>
+    </div>
+    <div class="new-word col-md-4 col-lg-4">
+      <form role="form" class="form-inline">
+        <div class="form-group">
+          <input class="new-word form-control" type="text" placeholder="New Word:">
+          <input type="submit" class="btn btn-primary" value="+">
+          <button class="delete btn">X</button>
+          <button class="voice word btn"><span class="glyphicon glyphicon-headphones"></span></button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
