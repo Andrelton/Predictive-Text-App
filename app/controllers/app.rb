@@ -7,7 +7,7 @@ post '/docs' do
   current_user
   create_doc
       p "*" * 60
-    p 'inside post route docs'
+    p @doc
   redirect "/docs/#{@doc.id}"
 end
 

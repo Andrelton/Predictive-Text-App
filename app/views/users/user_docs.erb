@@ -13,7 +13,9 @@
         <% doc_path = "/docs/#{ doc.id }" %>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><%= doc.title %></h3>
+            <a href=<%= doc_path %>>
+              <h3 class="panel-title"><%= doc.title %></h3>
+            </a>
             <a href=<%= doc_path %>><button class="btn btn-primary doc-btn">Edit</button></a>
             <form action="/docs/<%= doc.id %>" method="post">
               <input name ="_method" type="hidden" value="delete"/>
@@ -21,11 +23,13 @@
             </form>
           </div>
           <div class="panel-body">
-            <% content = doc.content[0..180] %>
-            <%= content %>
-            <% if content.length < doc.content.length %>
-              ...
-              <p><a href=<%= doc_path %>>See More!</a></p>
+            <% if doc.content %>
+              <% content = doc.content[0..180] %>
+              <%= content %>
+              <% if content.length < doc.content.length %>
+                ...
+                <p><a href=<%= doc_path %>>See More!</a></p>
+              <% end %>
             <% end %>
           </div>
         </div>

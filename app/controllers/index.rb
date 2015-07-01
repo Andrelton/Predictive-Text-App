@@ -41,6 +41,7 @@ end
 get '/users/:id' do
   @user = User.where(id: params[:id]).first
   @docs = @user.docs
+  p @docs
   erb :'users/user_docs'
 end
 
