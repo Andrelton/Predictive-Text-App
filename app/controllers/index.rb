@@ -40,12 +40,6 @@ end
 
 get '/users/:id' do
   @user = User.where(id: params[:id]).first
-  # ?? This should not always show the current user's page....
-  # current_user
   @docs = @user.docs
   erb :'users/user_docs'
-end
-
-get '/users/:user_id/docs' do
-  "users documents"
 end
