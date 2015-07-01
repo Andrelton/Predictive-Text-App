@@ -1,21 +1,26 @@
-<main class="aligncenter">
-	<h1>Here will be the title of the doc...</h1>
-	<section id="content_column">
-		<div class="doc-content">
-			<p contenteditable="true"><%= @doc.content %></p>
-		</div>
-    <div class="save">
-		  <form method="PUT" action="/docs/<%= @doc.id %>">
-		    <!-- <input type="hidden" name="_method" value="PUT"> -->
-		    <input id="save" type="submit" value="SAVE!">
-		  </form>
-		</div>
 
-		<div class="new-word">
-		  <form>
-		    <input class="new-word" type="text" placeholder="Enter a new word here:">
-		    <input id="new-word" type="submit" value="+">
-		  </form>
-		</div>
-	</section>
-</main>
+<h3>Story by <%= @doc.user.first_name %></h3>
+<h1 id="doc-title" contenteditable="true"><%= @doc.title %></h1>
+
+<div class="doc-content">
+  <p contenteditable="true"><%= @doc.content %></p>
+  <!-- <p><%= @doc.content %></p> -->
+  <button class="voice doc">Listen to Your Doc!</button>
+</div>
+
+
+<div class="save">
+  <form method="PUT" action="/docs/<%= @doc.id %>">
+    <!-- <input type="hidden" name="_method" value="PUT"> -->
+    <input type="submit" value="SAVE! :)">
+  </form>
+</div>
+
+<div class="new-word">
+  <form>
+    <input class="new-word" type="text" placeholder="New Word:">
+    <input type="submit" value="+">
+  </form>
+  <button class="delete">X</button>
+  <button class="voice word">&#9738; Hear Word!</button>
+</div>
