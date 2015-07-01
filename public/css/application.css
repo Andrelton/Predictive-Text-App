@@ -31,9 +31,13 @@ canvas#colors_sketch {
   background-color: #FFFFF0;
   box-shadow: 8px 8px 8px #888888;
 }
+
 div.draw {
   margin-bottom: 100px;
-  margin-left: 2%;
+  /*margin-left: 2%;*/
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .tools a {
