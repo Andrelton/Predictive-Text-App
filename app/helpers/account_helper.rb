@@ -13,21 +13,15 @@ helpers do
   end
 
   def login
-    p "*" * 60
+    p "*" * 50
     p params
-    if params[:password]
-      @user = User.find_by(username: params[:username])
-      if @user && @user.password == params[:password]
-        give_token(@user)
-        redirect "/users/#{@user.id}"
-      else
-        # @errors = @user.errors
-        erb :sign_in
-      end
-    else
-      # @errors = @user.errors
-      erb :sign_in
+    @user = User.where(username: params[:username]).first
+    if @user && @user.password == params[:password]
+      give_token(@user)
+      redirect "/users/#{@user.id}"
     end
+    @error = "Check your username or password"
+    erb :sign_in
   end
 
   def logout
