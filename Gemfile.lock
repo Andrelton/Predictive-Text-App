@@ -97,12 +97,6 @@ DEPENDENCIES
   shoulda-matchers
   sinatra
   sinatra-contrib
-<<<<<<< HEAD
-=======
-
 BUNDLED WITH
    1.10.5
-<<<<<<< HEAD
-=======
->>>>>>> master
->>>>>>> 0fa91d391a26a845f9bc2356beaa96268ef30434
+
