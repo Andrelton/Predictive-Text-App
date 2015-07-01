@@ -6,10 +6,14 @@ end
 post '/docs' do
   current_user
   create_doc
+      p "*" * 60
+    p 'inside post route docs'
   redirect "/docs/#{@doc.id}"
 end
 
 get '/docs/:id' do
+  p "*" * 60
+    p 'inside get route docs-id'
   @doc = Doc.where(id: params[:id]).first
   erb :"docs/show"
 end
@@ -20,7 +24,7 @@ put '/docs/:id' do
   doc.title = params[:title]
   doc.content = params[:content]
   if doc.save
-    content_type :json
+    # content_type :json
     doc.user_id.to_json
   else
     status 500
@@ -29,7 +33,9 @@ put '/docs/:id' do
   end
 end
 
-delete 'docs/:id' do
-  doc = Doc.where(id: params[:id]).first
-  doc.destroy
+delete '/docs/:id' do
+  current_user
+  @doc = Doc.find_by(id: params[:id])
+  @doc.destroy
+  redirect "/users/#{@current_user.id}"
 end

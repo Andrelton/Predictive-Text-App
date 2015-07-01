@@ -46,6 +46,3 @@ get '/users/:id' do
   erb :'users/user_docs'
 end
 
-get '/users/:user_id/docs' do
-  "users documents"
-end
