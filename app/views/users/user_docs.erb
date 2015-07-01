@@ -9,12 +9,21 @@
 
     <!-- start making document panels -->
     <% @docs.each do |doc| %>
+      <% doc_path = "/docs/#{ doc.id }" %>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title"><%= doc.title %></h3>
+          <h3 class="panel-title">
+            <a href=<%= doc_path %>><%= doc.title %></a>
+            <a href=<%= doc_path %>>Edit</a>
+          </h3>
         </div>
         <div class="panel-body">
-          <%= doc.content %>
+          <% content = doc.content[0..180] %>
+          <%= content %>
+          <% if content.length < doc.content.length %>
+            ...
+            <p><a href=<%= doc_path %>>See More!</a></p>
+          <% end %>
         </div>
       </div>
     <% end %>

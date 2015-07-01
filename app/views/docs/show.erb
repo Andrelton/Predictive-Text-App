@@ -10,7 +10,7 @@
   </div>
   <div class="row">
     <div id="doc-edit-area" class="well col-md-8 col-lg-8">
-      <h3>Story by <%= @doc.user.first_name %></h3>
+      <h3>Story by <%= @doc.user.first_name.capitalize %></h3>
       <h1 id="doc-title" contenteditable="true" class="text-center"><%= @doc.title %></h1>
 
       <div class="doc-content">

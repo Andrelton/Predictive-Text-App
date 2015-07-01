@@ -43,8 +43,6 @@ $(document).ready(function() {
   var newTitle = $('h1#doc-title').text();
   var newContent = $('div.doc-content').find('p').text();
 
-  debugger
-
   // ajax call to update database
   var request = $.ajax({
     type: method,
@@ -91,14 +89,14 @@ $(document).ready(function() {
 
   // this was when we read from the buttonh
   // var text = $(this).attr('name');
-  var text = $(this).siblings('form').find('input.new-word').val();
+  var text = $(this).siblings('input.new-word').val();
   responsiveVoice.speak(text);
  });
 
  $('div.new-word').on('click', 'button.delete', function(event) {
   event.preventDefault();
 
-  var input = $(this).siblings('form').find('input.new-word');
+  var input = $(this).siblings('input.new-word');
   input.val('').select();
   });
 });
