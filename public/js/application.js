@@ -63,10 +63,10 @@ $(document).ready(function() {
  });
 
 // TEXT-TO-VOICE FOR WHOLE DOC
- $('div.doc-content').on('click', 'button.voice', function(event) {
+ $('div#document-controls').on('click', 'button.voice', function(event) {
   event.preventDefault();
 
-  var text = $(this).siblings('p').text();
+  var text = $('div.doc-content').find('p').text();
 
   responsiveVoice.speak(text);
  });
