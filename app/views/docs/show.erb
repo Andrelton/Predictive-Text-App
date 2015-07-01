@@ -1,0 +1,20 @@
+<h1>Here will be the title of the doc...</h1>
+
+<div class="doc-content">
+  <p contenteditable="true"><%= @doc.content %></p>
+</div>
+
+<div class="save">
+  <form method="PUT" action="/docs/<%= @doc.id %>">
+    <!-- <input type="hidden" name="_method" value="PUT"> -->
+    <input type="submit" value="SAVE! :)">
+  </form>
+</div>
+
+<div class="new-word">
+  <form>
+    <input class="new-word" type="text" placeholder="New Word:">
+    <input type="submit" value="+">
+  </form>
+</div>
+
