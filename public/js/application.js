@@ -99,6 +99,54 @@ $(document).ready(function() {
   var input = $(this).siblings('input.new-word');
   input.val('').select();
   });
+
+ // ADD PHOTO
+ // SHOW FORM
+ $('div.photo').on('click', 'button.add-photo', function(event) {
+  event.preventDefault();
+  var button = $(this);
+
+  button.toggle();
+  button.siblings('form').removeClass('hidden');
+
+ });
+
+ // HIDE FORM
+  $('div.photo').on('click', 'button.canceler', function(event) {
+    event.preventDefault();
+    var form = $(this).parent();
+
+    form.siblings('button.add-photo').toggle();
+    form.addClass('hidden');
+
+  });
+
+  // ....ACTUALLY ADD PHOTO
+  $('div.photo').on('submit', 'form', function(event) {
+    event.preventDefault();
+    var form = $(this);
+
+    var method = form.attr('method');
+    var action = form.attr('action');
+
+    var request = $.ajax({
+      type: method,
+      url: action,
+      data: form.serialize(),
+      dataType: 'html'
+    });
+
+    request.done(function(photoHTML) {
+
+    });
+
+    request.fail(function(errorMessage) {
+      alert("Ok [thumbs up]");
+    });
+
+  });
 });
+
+
 
 

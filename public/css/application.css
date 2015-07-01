@@ -25,3 +25,16 @@ li:first-child {
 li.ui-menu-item:hover {
   cursor: pointer;
 }
+
+.hidden {
+  display: none;
+}
+
+input.url {
+  width: 450px;
+  margin-bottom: 1em;
+}
+
+button.add-photo {
+  margin-bottom: 1em;
+}

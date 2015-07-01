@@ -29,6 +29,12 @@ put '/docs/:id' do
   end
 end
 
+put '/docs/:id/photo' do
+  doc = Doc.where(id: params[:id]).first
+  doc.photo = params[:photo_url]
+  status 400
+end
+
 delete 'docs/:id' do
   doc = Doc.where(id: params[:id]).first
   doc.destroy

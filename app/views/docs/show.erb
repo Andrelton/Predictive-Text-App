@@ -7,6 +7,15 @@
         <input id="save-btn" class="btn btn-warning" type="submit" value="SAVE">
       </form>
     </div>
+    <div class="photo">
+      <button class="add-photo btn btn-primary">Add a photo!</button>
+      <form class="hidden" method="POST" action="/docs/<%= @doc.id %>/photo">
+        <input type="hidden" name="_method" value="PUT">
+        <input class="url" name="photo_url" type="text" placeholder="Photo URL:" value="http://cdn.sheknows.com/articles/2013/04/Puppy_2.jpg">
+        <input class="btn btn-primary" type="submit" value="Add Your Photo">
+        <button class="canceler btn btn-warning">Cancel</button>
+      </form>
+    </div>
   </div>
   <div class="row">
     <div id="doc-edit-area" class="well col-md-8 col-lg-8">
@@ -29,3 +38,4 @@
     </div>
   </div>
 </div>
+
