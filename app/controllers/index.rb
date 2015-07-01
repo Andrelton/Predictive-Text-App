@@ -12,7 +12,6 @@ post '/sessions' do
 end
 
 delete "/sessions/:user_id" do
-  # @user = User.where(id: params[:user_id]).first
   current_user
   logout
   redirect '/'
@@ -34,6 +33,7 @@ post '/users' do
     give_token(@user)
     redirect "/users/#{@user.id}"
   else
+    @errors = @user.errors.full_messages
     erb :sign_up
   end
 end
