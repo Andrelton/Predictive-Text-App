@@ -30,5 +30,5 @@ end
 get '/users/:id' do
   @user = User.where(:id => params[:id]).first
   @docs = @user.docs
-  # erb :user_docs  PLACEHOLDER
+  erb :'users/user_docs'
 end
