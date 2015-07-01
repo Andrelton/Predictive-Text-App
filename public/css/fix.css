@@ -12,6 +12,11 @@ small {
   margin-bottom: 20px;
 }
 
+.home-panel {
+  padding-left:0px;
+  padding-right:0px;
+}
+
 .sign {
   margin-top: 150px;
   margin-bottom: 150px;
@@ -76,5 +81,12 @@ small {
   font-size: 3.0em;
   line-height: 145%;
 }
+
+#word-prediction-buttons {
+  position: fixed;
+  right:0px;
+  top: 180px;
+}
+
 
 
