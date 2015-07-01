@@ -23,6 +23,12 @@
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right" >
         <div class="menu-links scroll-me">
+          <% if @user %>
+            <form action="/sessions/<%= @user.id %>" method="post">
+              <input name ="_method" type="hidden" value="delete"/>
+              <input type="submit" value="Sign Out" class="btn btn-warning" style="float: right;"/>
+            </form>
+          <% end %>
           <a href="/"> <i class="ion-ios-home-outline"></i> </a>
         </div>
       </div>
