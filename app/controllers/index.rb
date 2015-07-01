@@ -11,6 +11,9 @@ post '/sessions' do
   login
 end
 
+delete "/sessions/#{@user.id}" do
+  logout
+end
 
 #-----------USERS---------------
 get '/users/new' do
