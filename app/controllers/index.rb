@@ -9,23 +9,26 @@ end
 
 post '/sessions' do
   login
-
-  #sign in user if valid
-  #redirect user to erb sign in if invalid
 end
 
 #-----------USERS---------------
 get '/users/new' do
   erb :sign_up
-
 end
 
 post '/users' do
-  p "*" * 90
-  p params[:user]
-  # create
-  #create user -- use model
-  #redirect to user profile page
+  create
+  p @user
+  if @user.save
+    give_token(@user)
+    redirect "/users/#{@user.id}"
+  else
+    erb :sign_up
+  end
 end
 
-#-----------DOCS---------------
+get '/users/:id' do
+  @user = User.where(:id => params[:id]).first
+  @docs = @user.docs
+  # erb :user_docs  PLACEHOLDER
+end
