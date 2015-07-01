@@ -9,9 +9,6 @@ end
 
 post '/sessions' do
   login
-
-  #sign in user if valid
-  #redirect user to erb sign in if invalid
 end
 
 #-----------USERS---------------
@@ -31,7 +28,7 @@ post '/users' do
 end
 
 get '/users/:id' do
-  #show user page
+  @user = User.where(:id params[:id]).first
+  @docs = @user.docs
+  # erb :user_docs  PLACEHOLDER
 end
-
-#-----------DOCS---------------

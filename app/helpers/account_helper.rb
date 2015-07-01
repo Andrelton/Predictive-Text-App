@@ -12,14 +12,10 @@ helpers do
   def login
     @user = User.find_by(username: params[:username])
     if @user.password == params[:password]
-      given_token
-      puts "*" * 80
-      "inside login with password, redirect to user profile"
+      given_token(@user)
       redirect "/users/{@user.id}"
     else
-      # redirect_to home_url
-      puts "*" * 80
-      puts "inside login without password"
+      erb :sign_in
     end
 
     def log_out
