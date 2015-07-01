@@ -13,6 +13,8 @@ helpers do
   end
 
   def login
+    p "*" * 60
+    p params
     if params[:password]
       @user = User.find_by(username: params[:username])
       if @user && @user.password == params[:password]
