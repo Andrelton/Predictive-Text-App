@@ -40,8 +40,6 @@ end
 
 get '/users/:id' do
   @user = User.where(id: params[:id]).first
-  # ?? This should not always show the current user's page....
-  # current_user
   @docs = @user.docs
   erb :'users/user_docs'
 end
@@ -56,4 +54,3 @@ put '/users/:id' do
   @user.update_attributes(:first_name => params[:first_name], :user_name => params[:user_name])
   redirect "/users/#{@user.id}"
 end
-
