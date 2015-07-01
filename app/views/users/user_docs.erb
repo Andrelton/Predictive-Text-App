@@ -13,10 +13,10 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title"><%= doc.title %></h3>
-          <a href=<%= doc_path %>><button class="btn btn-primary">Edit</button></a>
+          <a href=<%= doc_path %>><button class="btn btn-primary doc-btn">Edit</button></a>
           <form action="/docs/<%= doc.id %>" method="post">
             <input name ="_method" type="hidden" value="delete"/>
-            <input id="doc-delete" type="submit" value="Delete" class="btn btn-danger"/>
+            <input type="submit" value="Delete" class="btn btn-danger doc-btn"/>
           </form>
         </div>
         <div class="panel-body">
