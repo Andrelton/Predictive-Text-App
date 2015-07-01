@@ -11,6 +11,12 @@ post '/sessions' do
   login
 end
 
+delete "/sessions/:user_id" do
+  @user = User.where(id: params[:user_id]).first
+  logout
+  redirect '/'
+end
+
 #-----------USERS---------------
 get '/users/new' do
   erb :sign_up
@@ -18,7 +24,6 @@ end
 
 post '/users' do
   create
-  p @user
   if @user.save
     give_token(@user)
     redirect "/users/#{@user.id}"
@@ -28,7 +33,7 @@ post '/users' do
 end
 
 get '/users/:id' do
-  @user = User.where(:id => params[:id]).first
+  @user = User.where(id: params[:id]).first
   @docs = @user.docs
-  # erb :user_docs  PLACEHOLDER
+  erb :'users/user_docs'
 end

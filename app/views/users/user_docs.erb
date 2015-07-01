@@ -1,0 +1,29 @@
+<!-- Header for the list -->
+<div id="docs-list" class="docs">
+  <div class="container">
+    <img src="/img/girl.jpeg" alt="..." class="img-circle" style="width: 20%; float:left; margin: 10px;"/>
+    <h1 style="margin-left: 20%;"><%=@user.username %>'s Documents</h1>
+    <a href="/docs/new"><button type="button" class="btn btn-primary" style="float: right;">New Document</button></a>
+    <!--List of documents -->
+    <div class="row" style="clear: both; margin-top: 5%;">
+
+    <!-- start making document panels -->
+    <% @docs.each do |doc| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= doc.title %></h3>
+        </div>
+        <div class="panel-body">
+          <%= doc.content %>
+        </div>
+      </div>
+    <% end %>
+    <!-- Prev/Next Pagination -->
+    <nav>
+      <ul class="pager">
+        <li><a href="#">Previous</a></li>
+        <li><a href="#">Next</a></li>
+      </ul>
+    </nav>
+  </div> <!-- end div class container -->
+</div> <!-- end div class docs -->
