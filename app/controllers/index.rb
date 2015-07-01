@@ -51,6 +51,6 @@ end
 
 put '/users/:id' do
   @user = User.where(id: params[:id]).first
-  @user.update_attributes(:first_name => params[:first_name], :user_name => params[:user_name])
+  @user.update_attributes(:first_name => params[:first_name], :username => params[:user_name])
   redirect "/users/#{@user.id}"
 end
