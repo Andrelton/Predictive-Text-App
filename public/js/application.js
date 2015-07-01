@@ -137,8 +137,12 @@ $(document).ready(function() {
     });
 
     request.done(function(photoHTML) {
+      form.parent().find('img').remove();
       form.parent().append(photoHTML);
       // $('div#doc-edit-area').prepend(photoHTML);
+      form.find('input.url').val('');
+      form.addClass('hidden');
+      form.siblings('button.add-photo').text('Change Photo').toggle();
     });
 
     request.fail(function(errorMessage) {
