@@ -1,19 +1,28 @@
 helpers do
 
+  def give_token(user)
+    session[:user_id] = user.id
+  end
+
   def create
-    @user = User.new(params[:user])
+    @user = User.new(params)
     @user.password = params[:password]
-    @user.save!
   end
 
   def login
     @user = User.find_by(username: params[:username])
     if @user.password == params[:password]
-      given_token
+      given_token(@user)
+      redirect "/users/{@user.id}"
     else
-      redirect_to home_url
+      erb :sign_in
     end
-  end
+
+    def log_out
+    session[:user_id] = nil
+    @current_user = nil
+    end
+end
 
   # assign them a random one and mail it to them, asking them to change it
   # def forgot_password
