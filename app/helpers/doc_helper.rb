@@ -1,6 +1,8 @@
 helpers do
   def create_doc
-    @doc = Doc.new(params)
-    #TODO: save doc under @user.docs
+    @docs = @current_user.docs
+    @doc = Doc.create!(params)
+    @doc.user_id = @current_user.id
+    @docs << @doc
   end
 end
