@@ -25,3 +25,7 @@ put '/docs/:id' do
   end
 end
 
+delete 'docs/:id' do
+  doc = Doc.where(id: params[:id]).first
+  doc.destroy
+end
