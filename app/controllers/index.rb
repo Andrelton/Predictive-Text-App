@@ -11,8 +11,10 @@ post '/sessions' do
   login
 end
 
-delete "/sessions/#{@user.id}" do
+delete "/sessions/:user_id" do
+  @user = User.where(id: params[:user_id]).first
   logout
+  redirect '/'
 end
 
 #-----------USERS---------------
@@ -31,7 +33,7 @@ post '/users' do
 end
 
 get '/users/:id' do
-  @user = User.where(:id => params[:id]).first
+  @user = User.where(id: params[:id]).first
   @docs = @user.docs
   erb :'users/user_docs'
 end
