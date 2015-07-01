@@ -11,6 +11,7 @@ post '/sessions' do
   login
 end
 
+
 #-----------USERS---------------
 get '/users/new' do
   erb :sign_up
