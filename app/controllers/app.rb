@@ -7,8 +7,7 @@ post '/docs' do
 end
 
 get '/docs/:id' do
-  # @doc = Doc.where(id: params[:id]).first
-  @doc = Doc.first
+  @doc = Doc.where(id: params[:id]).first
   erb :"docs/show"
 end
 
