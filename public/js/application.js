@@ -40,18 +40,24 @@ $(document).ready(function() {
   var method = form.attr('method');
   var action = form.attr('action');
   // pulls new content out of <p> tag
+  var newTitle = $('h1#doc-title').text();
   var newContent = $('div.doc-content').find('p').text();
+
+  debugger
 
   // ajax call to update database
   var request = $.ajax({
     type: method,
     url: action,
-    data: { content: newContent },
+    data: {
+      title: newTitle,
+      content: newContent
+    },
     dataType: 'json'
   });
   // sloppy way to redirect
   request.done(function(userId) {
-    window.location = "/users/" + userId + "/docs";
+    window.location = "/users/" + userId;
   })
 
  });

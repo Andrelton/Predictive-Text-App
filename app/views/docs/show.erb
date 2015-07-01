@@ -1,5 +1,5 @@
 <h3>Story by <%= @doc.user.username %></h3>
-<h1><%= @doc.title %></h1>
+<h1 id="doc-title" contenteditable="true"><%= @doc.title %></h1>
 
 <div class="doc-content">
   <p contenteditable="true"><%= @doc.content %></p>
