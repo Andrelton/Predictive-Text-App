@@ -20,7 +20,7 @@ put '/docs/:id' do
   doc.title = params[:title]
   doc.content = params[:content]
   if doc.save
-    content_type :json
+    # content_type :json
     doc.user_id.to_json
   else
     status 500
