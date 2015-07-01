@@ -1,4 +1,5 @@
 get '/docs/new' do
+  current_user
   erb :"docs/new_doc"
 end
 
