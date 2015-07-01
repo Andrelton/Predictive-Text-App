@@ -88,11 +88,16 @@ small {
   top: 180px;
 }
 
-#doc-delete {
+.doc-btn {
   float:right;
   position: relative;
   top: -25px;
   left: 12px;
 }
 
+#user-button {
+  float: right;
+  margin: 0px 4px;
+  font-size: 15px;
+}
 
