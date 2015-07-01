@@ -20,3 +20,36 @@ small {
 .btn-one {
   color:white;
 }
+
+#content_column {
+	float: center;
+	width: 40%;
+	position: absolute;
+	left: 30%;
+	right: 30%;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+.notcenter {
+	text-align: left;
+}
+
+.new-word{
+
+}
+
+#save {
+	background-color: green;
+	border-radius: 5px;
+	border-color: green;
+}
+
+#new-word {
+	background-color: blue;
+	border-radius: 5px;
+	border-color: blue;
+
+}
