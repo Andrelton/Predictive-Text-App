@@ -16,7 +16,7 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.0)
     backports (3.6.4)
-    bcrypt (3.1.10)
+
     builder (3.2.2)
     capybara (2.4.4)
       mime-types (>= 1.16)
@@ -97,3 +97,9 @@ DEPENDENCIES
   shoulda-matchers
   sinatra
   sinatra-contrib
+<<<<<<< HEAD
+=======
+
+BUNDLED WITH
+   1.10.5
+>>>>>>> master
