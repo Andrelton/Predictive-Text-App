@@ -18,7 +18,6 @@ end
 
 post '/users' do
   create
-  p @user
   if @user.save
     give_token(@user)
     redirect "/users/#{@user.id}"
