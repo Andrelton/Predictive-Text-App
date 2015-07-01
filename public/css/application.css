@@ -25,3 +25,9 @@ li:first-child {
 li.ui-menu-item:hover {
   cursor: pointer;
 }
+
+canvas#simple_sketch {
+  background-color: #FFFFF0;
+  box-shadow: 8px 8px 8px #888888;
+  margin-bottom: 100px;
+}
