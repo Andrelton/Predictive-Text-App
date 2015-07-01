@@ -88,5 +88,11 @@ small {
   top: 180px;
 }
 
+#doc-delete {
+  float:right;
+  position: relative;
+  top: -25px;
+  left: 12px;
+}
 
 
