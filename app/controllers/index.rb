@@ -22,7 +22,7 @@ end
 
 post '/users' do
   p "*" * 90
-  p params
+  p params[:user]
   # create
   #create user -- use model
   #redirect to user profile page
