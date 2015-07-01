@@ -1,8 +1,12 @@
 <!-- Header for the list -->
 <div id="docs-list" class="docs">
+  <form action="/sessions/<%= @user.id %>" method="post">
+    <input name ="_method" type="hidden" value="delete"/>
+    <input type="submit" value="Sign Out"/>
+  </form>
   <div class="container">
     <img src="/img/girl.jpeg" alt="..." class="img-circle" style="width: 20%; float:left; margin: 10px;">
-    <h1 style="margin-left: 20%;">Olga's Documents</h1>
+    <h1 style="margin-left: 20%;"><%=@current_user.username %>'s Documents</h1>
     <button type="button" class="btn btn-primary" style="float: right;">New Document</button>
     <!--List of documents -->
     <div class="row" style="clear: both; margin-top: 5%;">

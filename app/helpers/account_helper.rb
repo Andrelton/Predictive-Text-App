@@ -1,4 +1,7 @@
 helpers do
+  def current_user
+    @current_user ||= User.where(id: session[:user_id]).first if session[:user_id]
+  end
 
   def give_token(user)
     session[:user_id] = user.id
@@ -10,18 +13,27 @@ helpers do
   end
 
   def login
-    @user = User.find_by(username: params[:username])
-    if @user.password == params[:password]
-      given_token(@user)
-      redirect "/users/{@user.id}"
+    if params[:password]
+      @user = User.find_by(username: params[:username])
+      if @user && @user.password == params[:password]
+        p "*" * 50
+        p "inside login if"
+        give_token(@user)
+        redirect "/users/#{@user.id}"
+      else
+        @errors = @user.errors
+        erb :sign_in
+      end
     else
+      @errors = @user.errors
       erb :sign_in
     end
+  end
 
-    def log_out
+  def logout
     session[:user_id] = nil
     @current_user = nil
-    end
+  end
 end
 
   # assign them a random one and mail it to them, asking them to change it
@@ -33,4 +45,4 @@ end
   #   Mailer.create_and_deliver_password_change(@user, random_password)
   # end
 
-end
+
