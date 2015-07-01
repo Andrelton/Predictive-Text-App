@@ -10,6 +10,10 @@ $(document).ready(function() {
 
   var content = $('div.doc-content').find('p');
   content.append(" " + word);
+
+  $('span').find('div').hide();
+  var textBox = form.find('input[type="text"]')
+  textBox.val('').select();
  });
 
  $('div.save').on('submit', 'form', function(event) {
