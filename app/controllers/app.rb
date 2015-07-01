@@ -1,5 +1,5 @@
 get '/docs/new' do
-  #erb - form for new doc in the form u wil have action to post
+  erb
 end
 
 post '/docs' do
