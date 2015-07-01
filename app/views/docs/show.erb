@@ -3,7 +3,10 @@
 
 <div class="doc-content">
   <p contenteditable="true"><%= @doc.content %></p>
+  <!-- <p><%= @doc.content %></p> -->
+  <button class="voice doc">Listen to Your Doc!</button>
 </div>
+
 
 <div class="save">
   <form method="PUT" action="/docs/<%= @doc.id %>">
@@ -17,5 +20,8 @@
     <input class="new-word" type="text" placeholder="New Word:">
     <input type="submit" value="+">
   </form>
+  <button class="delete">X</button>
+  <button class="voice word">&#9738; Hear Word!</button>
 </div>
+
 

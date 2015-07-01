@@ -10,12 +10,16 @@ li.ui-menu-item {
   border-radius: 3px;
 }
 
+li.ui-menu-item:hover {
+  background-color: black;
+}
+
 span div {
   display: none;
 }
 
 li:first-child {
-  margin-top: 0.5em;
+  margin-top: 2em;
 }
 
 li.ui-menu-item:hover {

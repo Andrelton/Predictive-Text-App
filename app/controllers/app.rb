@@ -16,3 +16,4 @@ put '/docs/:id' do
     # error message
   end
 end
+
