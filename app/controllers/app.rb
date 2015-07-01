@@ -4,8 +4,9 @@ get '/docs/new' do
 end
 
 post '/docs' do
+  current_user
   create_doc
-  redirect '/users/:user_id/docs'
+  redirect "/docs/#{@doc.id}"
 end
 
 get '/docs/:id' do

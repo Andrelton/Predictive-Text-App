@@ -4,7 +4,7 @@
     <div class="save">
       <form method="PUT" action="/docs/<%= @doc.id %>">
         <!-- <input type="hidden" name="_method" value="PUT"> -->
-        <input id="save-btn" class="btn btn-warning" type="submit" value='SAVE <span class="glyphicon glyphicon-floppy-save"'>
+        <input id="save-btn" class="btn btn-warning" type="submit" value="SAVE">
       </form>
     </div>
   </div>
@@ -17,7 +17,7 @@
         <p contenteditable="true"><%= @doc.content %></p>
       </div>
     </div>
-    <div class="new-word col-md-4 col-lg-4">
+    <div id="word-prediction-buttons" class="new-word col-md-4 col-lg-4">
       <form role="form" class="form-inline">
         <div class="form-group">
           <input class="new-word form-control" type="text" placeholder="New Word:">
