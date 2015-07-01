@@ -4,7 +4,8 @@ get '/docs/new' do
 end
 
 post '/docs' do
-  #
+  create_doc
+  redirect '/users/:user_id/docs'
 end
 
 get '/docs/:id' do
