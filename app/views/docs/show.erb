@@ -1,5 +1,6 @@
 <div class="container" id="doc-edit">
   <div id="document-controls" role="group">
+    <button class="voice doc btn btn-primary" onclick="javascript:window.print()"><span class="glyphicon glyphicon-print"></span>Publish</button>
     <button class="voice doc btn btn-primary"><span class="glyphicon glyphicon-headphones"></span>  Listen to Your Doc!</button>
     <div class="save">
       <form method="PUT" action="/docs/<%= @doc.id %>">
