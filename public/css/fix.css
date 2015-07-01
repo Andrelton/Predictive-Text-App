@@ -53,3 +53,8 @@ small {
 	border-color: blue;
 
 }
+
+.footer-row {
+	position: absolute;
+	padding-top: 50px;
+}
