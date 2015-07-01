@@ -100,6 +100,17 @@ $(document).ready(function() {
   input.val('').select();
   });
 
+
+ // draw pad!!!
+ // $('#simple_sketch').sketch();
+    $.each(['#f00', '#ff0', '#befa11', '#0ff', '#0b7ec7', '#f0f', '#000', '#fff'], function() {
+      $('div.draw .tools').append("<div><a href='#colors_sketch' data-color='" + this + "' style=' height: 10px; width: 10px; background: " + this + ";'></a></div>");
+    });
+    $.each([3, 5, 10, 15], function() {
+      $('div.draw .tools').append("<div><a href='#colors_sketch' data-size='" + this + "' style='background: #ccc'>" + this + "</a></div> ");
+    });
+    $('#colors_sketch').sketch();
+
  // ADD PHOTO
  // SHOW FORM
  $('div.photo').on('click', 'button.add-photo', function(event) {
@@ -150,6 +161,7 @@ $(document).ready(function() {
     });
 
   });
+
 });
 
 
