@@ -1,0 +1,19 @@
+<div id="update_user" class="sign">
+  <div class="container">
+    <div class="row">
+      <h1>Change your user information:</h1>
+      <form action="/users/<%= @user.id %>" method="POST" class="form" id="update_user_information">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+          <label for="user">User Name:</label>
+          <input type="text" name="username" class="form-control" id="username" placeholder="User Name">
+        </div>
+        <div class="form-group">
+          <label for="first_name">First Name:</label>
+          <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
