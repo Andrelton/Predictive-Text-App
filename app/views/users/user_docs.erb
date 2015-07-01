@@ -2,23 +2,30 @@
 <div id="docs-list" class="docs">
   <div class="container">
     <img src="/img/girl.jpeg" alt="..." class="img-circle" style="width: 20%; float:left; margin: 10px;"/>
-    <h1 style="margin-left: 20%;"><%=@current_user.first_name %>'s Documents</h1>
+    <h1 style="margin-left: 20%;"><%= @user.username %>'s Documents</h1>
     <a href="/docs/new"><button type="button" class="btn btn-primary" style="float: right;">New Document</button></a>
     <!--List of documents -->
     <div class="row" style="clear: both; margin-top: 5%;">
 
     <!-- start making document panels -->
     <% @docs.each do |doc| %>
+      <% doc_path = "/docs/#{ doc.id }" %>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title"><%= doc.title %></h3>
-          <form action="/docs/<%= doc.id %>" role="form" method="post" id="delete">
+          <a href=<%= doc_path %>><button class="btn btn-primary doc-btn">Edit</button></a>
+          <form action="/docs/<%= doc.id %>" method="post">
             <input name ="_method" type="hidden" value="delete"/>
-            <input id="doc-delete" type="submit" value="Delete" class="btn btn-danger"/>
+            <input type="submit" value="Delete" class="btn btn-danger doc-btn"/>
           </form>
         </div>
         <div class="panel-body">
-          <%= doc.content %>
+          <% content = doc.content[0..180] %>
+          <%= content %>
+          <% if content.length < doc.content.length %>
+            ...
+            <p><a href=<%= doc_path %>>See More!</a></p>
+          <% end %>
         </div>
       </div>
     <% end %>

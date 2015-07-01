@@ -10,12 +10,11 @@
   </div>
   <div class="row">
     <div id="doc-edit-area" class="well col-md-8 col-lg-8">
-      <h3>Story by <%= @doc.user.first_name %></h3>
+      <h3>Story by <%= @doc.user.first_name.capitalize %></h3>
       <h1 id="doc-title" contenteditable="true" class="text-center"><%= @doc.title %></h1>
 
       <div class="doc-content">
         <p contenteditable="true"><%= @doc.content %></p>
-        <!-- <p><%= @doc.content %></p> -->
       </div>
     </div>
     <div id="word-prediction-buttons" class="new-word col-md-4 col-lg-4">

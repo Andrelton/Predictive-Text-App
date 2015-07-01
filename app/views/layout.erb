@@ -28,7 +28,7 @@
               <input name ="_method" type="hidden" value="delete"/>
               <input type="submit" value="Sign Out" class="btn btn-warning" style="float: right;"/>
             </form>
-            <a href="/users/<%= @current_user.id %>"<button type="button" class="btn btn-primary" >Your Docs</button>
+            <a id="user-button" href="/users/<%= @current_user.id %>"<button class="btn btn-primary">Your Docs</button></a>
           <% end %>
           <a href="/"> <i class="ion-ios-home-outline"></i> </a>
         </div>
@@ -45,6 +45,7 @@
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
 <script src="/js/wordList.js"></script>
 <script src="/js/application.js"></script>
 </body>

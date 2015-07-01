@@ -328,6 +328,13 @@ footer {
         margin-left:10px;
     }
 
+footer.footer.row {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+}
+
 /*================================
     RESPONSIVE STYLES
  ============================  */
