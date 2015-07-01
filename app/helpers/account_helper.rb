@@ -1,8 +1,4 @@
 helpers do
-  def current_user
-    @current_user ||= User.where(id: session[:user_id]).first if session[:user_id]
-  end
-
   def give_token(user)
     session[:user_id] = user.id
   end
@@ -21,18 +17,18 @@ helpers do
         give_token(@user)
         redirect "/users/#{@user.id}"
       else
-        @errors = @user.errors
+        # @errors = @user.errors
         erb :sign_in
       end
     else
-      @errors = @user.errors
+      # @errors = @user.errors
       erb :sign_in
     end
   end
 
   def logout
     session[:user_id] = nil
-    @current_user = nil
+    @user = nil
   end
 end
 
@@ -44,5 +40,3 @@ end
   #   @user.save!
   #   Mailer.create_and_deliver_password_change(@user, random_password)
   # end
-
-
