@@ -28,7 +28,7 @@ post '/users' do
 end
 
 get '/users/:id' do
-  @user = User.where(:id params[:id]).first
+  @user = User.where(:id => params[:id]).first
   @docs = @user.docs
   # erb :user_docs  PLACEHOLDER
 end
