@@ -1,7 +1,36 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+ $('input.new-word').autocomplete({
+  source: wordList
+ });
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+ $('div.new-word').on('submit', 'form', function(event) {
+  event.preventDefault();
+  var form = $(this);
+  var word = form.find('input.new-word').val();
+
+  var content = $('div.doc-content').find('p');
+  content.append(" " + word);
+ });
+
+ $('div.save').on('submit', 'form', function(event) {
+  event.preventDefault();
+  var form = $(this);
+
+  var method = form.attr('method');
+  var action = form.attr('action');
+  var newContent = $('div.doc-content').find('p').text();
+
+  var request = $.ajax({
+    type: method,
+    url: action,
+    data: { content: newContent },
+    dataType: 'json'
+  });
+
+  request.done(function(userId) {
+    debugger
+    window.location = "/users/" + userId + "/docs";
+  })
+
+ });
 });

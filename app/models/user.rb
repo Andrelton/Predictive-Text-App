@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :docs
 
   def password
-    @password||= Password.new(password_hash)
+    @password ||= Password.new(password_hash)
   end
 
   def password=(new_password)
