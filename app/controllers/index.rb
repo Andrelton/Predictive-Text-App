@@ -12,7 +12,8 @@ post '/sessions' do
 end
 
 delete "/sessions/:user_id" do
-  @user = User.where(id: params[:user_id]).first
+  # @user = User.where(id: params[:user_id]).first
+  current_user
   logout
   redirect '/'
 end
@@ -32,8 +33,13 @@ post '/users' do
   end
 end
 
-get '/users/:id' do
-  @user = User.where(id: params[:id]).first
-  @docs = @user.docs
+get '/users/:user_id' do
+  # @user = User.where(id: params[:id]).first
+  current_user
+  @docs = @current_user.docs
   erb :'users/user_docs'
+end
+
+get '/users/:user_id/docs' do
+  "users documents"
 end

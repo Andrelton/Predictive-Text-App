@@ -1,4 +1,8 @@
 helpers do
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
+
   def give_token(user)
     session[:user_id] = user.id
   end
@@ -12,8 +16,6 @@ helpers do
     if params[:password]
       @user = User.find_by(username: params[:username])
       if @user && @user.password == params[:password]
-        p "*" * 50
-        p "inside login if"
         give_token(@user)
         redirect "/users/#{@user.id}"
       else

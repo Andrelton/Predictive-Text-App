@@ -1,9 +1,11 @@
 get '/docs/new' do
+  current_user
   erb :"docs/new_doc"
 end
 
 post '/docs' do
-  #
+  create_doc
+  redirect '/users/:user_id/docs'
 end
 
 get '/docs/:id' do
@@ -26,3 +28,7 @@ put '/docs/:id' do
   end
 end
 
+delete 'docs/:id' do
+  doc = Doc.where(id: params[:id]).first
+  doc.destroy
+end
