@@ -30,9 +30,10 @@ put '/docs/:id' do
 end
 
 put '/docs/:id/photo' do
-  doc = Doc.where(id: params[:id]).first
-  doc.photo = params[:photo_url]
-  status 400
+  @doc = Doc.where(id: params[:id]).first
+  @doc.photo = params[:photo_url]
+  # @doc.save
+  erb :_photo, layout: false
 end
 
 delete 'docs/:id' do

@@ -137,7 +137,8 @@ $(document).ready(function() {
     });
 
     request.done(function(photoHTML) {
-
+      form.parent().append(photoHTML);
+      // $('div#doc-edit-area').prepend(photoHTML);
     });
 
     request.fail(function(errorMessage) {
