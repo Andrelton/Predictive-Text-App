@@ -1,6 +1,6 @@
 ﻿/*=============================================================
     Authour URL: www.designbootstrap.com
-    
+
     http://www.designbootstrap.com/
 
     License: MIT
@@ -10,14 +10,14 @@
     100% Free To use For Personal And Commercial Use.
 
     IN EXCHANGE JUST TELL PEOPLE ABOUT THIS WEBSITE
-   
+
 ========================================================  */
 
 /*================================
     GOOGLE FONT
 ==================================*/
 
-@import url(http://fonts.googleapis.com/css?family=Lato); /* FREE GOOGLE FONTS */
+@import url(https://fonts.googleapis.com/css?family=Lato); /* FREE GOOGLE FONTS */
 
 /*================================
   GENERAL STYLES
@@ -72,7 +72,7 @@ header {
         color:#fff;
         font-weight:900;
         margin:15px;
-        
+
     }
     header .menu-links a:hover, header .menu-links a:focus {
          text-decoration:none;
@@ -87,18 +87,18 @@ header {
             transition: all 0.2s ease;
     }
 
-   
+
 
 /*================================
   HOME SECTION STYLES
 ==================================*/
 
 #home {
-    background: url(../img/home.jpg) no-repeat center center; 
+    background: url(../img/home.jpg) no-repeat center center;
     padding: 0;
     -webkit-background-size: cover;
     background-size: cover;
-    -moz-background-size: cover;    
+    -moz-background-size: cover;
 }
 
     #home .overlay {
@@ -137,11 +137,11 @@ padding:15px 40px 15px 40px;
    margin:25px 5px 5px 0px;
 }
 
-.btn-one {   
+.btn-one {
 background-color: transparent;
-border:5px solid #48A5FF; 
-color:#000;       
-  
+border:5px solid #48A5FF;
+color:#000;
+
 }
  .btn-one:hover {
  background-color:#48A5FF;
@@ -149,23 +149,23 @@ color:#000;
  text-decoration:none;
     }
 
- .btn-two {   
+ .btn-two {
 background-color: #48A5FF;
-border:5px solid #48A5FF; 
-color:#fff;       
-  
+border:5px solid #48A5FF;
+color:#fff;
+
 }
  .btn-two:hover {
  background-color:transparent;
  color:#000;
  text-decoration:none;
     }
-.btn-three {   
-   
+.btn-three {
+
 background-color:transparent;
-border:5px solid #737373; 
-color:#000;       
-  
+border:5px solid #737373;
+color:#000;
+
 }
  .btn-three:hover {
 
@@ -174,7 +174,7 @@ color:#000;
  text-decoration:none;
     }
 
- 
+
  /*================================
     ABOUT STYLES
 ==================================*/
@@ -184,7 +184,7 @@ color:#000;
     padding-top:20px;
     font-size:50px;
 }
- 
+
 .img-side {
     max-height:420px;
 }
@@ -193,11 +193,11 @@ color:#000;
 ==================================*/
 
    #clients {
-    background: url(../img/clients.jpg) no-repeat center center; 
+    background: url(../img/clients.jpg) no-repeat center center;
     padding: 0;
     -webkit-background-size: cover;
     background-size: cover;
-    -moz-background-size: cover;    
+    -moz-background-size: cover;
 }
 
     #clients .overlay {
@@ -287,11 +287,11 @@ margin-top:-10px;
 ==================================*/
 
    #contact {
-    background: url(../img/contact.jpg) no-repeat center center; 
+    background: url(../img/contact.jpg) no-repeat center center;
     padding: 0;
     -webkit-background-size: cover;
     background-size: cover;
-    -moz-background-size: cover;    
+    -moz-background-size: cover;
 }
 
     #contact .overlay {
